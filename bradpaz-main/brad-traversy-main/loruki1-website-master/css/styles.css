@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+:root {
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+
+img {
+  width: 100%;
+}
+
+/* ============= */
+/* navbar */
+/* ============= */
+
+.navbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 70px;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 1rem;
+  margin: 0 1.5rem;
+}
+
+/* ============= */
+/* showcase */
+/* ============= */
+
+.showcase {
+  height: 40rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  position: relative;
+}
+.showcase h1 {
+  font-size: 4rem;
+}
+
+.showcase p {
+  margin: 2rem rem;
+}
+
+.showcase .grid {
+  /* height of form 35remz is visible here */
+  overflow: visible;
+  grid-template-columns: 55% 45%;
+  gap: 3rem;
+}
+
+.showcase-form {
+  position: relative;
+  top: 6rem;
+  /* height of this form creeated an overflow */
+  height: 35rem;
+  width: 40rem;
+  padding: 4rem;
+  z-index: 100;
+}
+
+.showcase-form .form-control {
+  margin: 3rem 0;
+}
+/* styling inside the text-field with input[type="text"] */
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+  border: 0;
+  border-bottom: 1px solid #b4becd;
+  width: 100%;
+  font-size: 1.6rem;
+}
+/* remove ugly outline when mouse over or clicked on input form */
+.showcase-form input:focus {
+  outline: none;
+}
+
+/* content appears at the back of the document */
+.showcase::before,
+.showcase::after {
+  content: "";
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  transform: skewY(-2deg);
+}
+
+.stats {
+  padding-top: 10rem;
+}
+.stats-heading {
+  max-width: 500px;
+  margin: auto;
+}
+.stats .grid h3 {
+  font-size: 3.5rem;
+}
+
+.stats .grid p {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* cli */
+
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* cli .grid-img first child */
+.cli .grid > *:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+/* cloud */
+
+.cloud .grid {
+  grid-template-columns: 4fr 3fr;
+}
+
+/* languages */
+.languages .flex {
+  flex-wrap: wrap;
+}
+
+.languages .card {
+  text-align: center;
+  margin: 1rem 1 rem 4rem;
+  transition: all 0.2s ease-in;
+}
+
+.languages .card h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.languages .card:hover {
+  transform: translateY(-15px);
+}
+
+.footer .social a {
+  margin: 0 1rem;
+}
+
+/* Tablet  and under */
+@media (max-width: 768px) {
+  .grid,
+  .showcase,
+  .grid.stats,
+  .grid.cli .grid,
+  .cloud .grid;
+}
+
+/* mobile */
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+  .navbar ul {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
